@@ -26,7 +26,7 @@ body .container {
     width: 720px;
 }
 
-body>header {
+body > header {
     background: #fff;
     color: #000;
     display: flex;
@@ -56,25 +56,88 @@ h2 {
     text-transform: uppercase;
 }
 
-nav a {
-    display: block;
-    font-weight: 700;
-    padding: .67em;
-}
-
-nav ol {
+nav ul {
+    background: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: row;
-    gap: 16px;
     justify-content: flex-end;
-    list-style-type: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-nav ol li {
-    background: #000;
-    list-style-type: none;
-    padding: 0;
-    text-transform: uppercase;
+nav li {
+    position: relative;
+}
+
+nav li > a, nav li > .dropdown-toggle {
+    display: block;
+    padding: 18px 25px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+nav li > a:hover, nav li > .dropdown-toggle:hover {
+    background: #555;
+}
+
+nav .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav .dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 9px;
+    transition: transform 0.3s;
+}
+
+nav .dropdown.active .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: max-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+nav .dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+nav .dropdown-menu li {
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+nav .dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+nav .dropdown-menu li a {
+    padding: 12px 20px;
+    color: #333;
+    display: block;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+nav .dropdown-menu li a:hover {
+    background: #f5f5f5;
 }
 
 section {
@@ -139,8 +202,7 @@ section {
 }
 
 ul.border-left-red {
-    border-left: rgb(226, 28, 33);
-    ;
+    border-left: rgb(226, 28, 33);;
     border-style: solid;
     border-width: 0 0 0 4px;
     padding: 0 1em;
@@ -186,7 +248,7 @@ ul.border-left-red li {
 .logo em {
     color: rgb(226, 28, 33);
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold",
-        sans-serif;
+    sans-serif;
     font-size: 60px;
     font-style: italic;
     padding-right: .25em;
