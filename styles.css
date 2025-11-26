@@ -62,7 +62,7 @@ h2 {
 h2::before {
     color: rgb(226, 28, 33);
     content: '///';
-    padding-right: .25em;
+    padding-right: .2em;
 }
 
 nav {
