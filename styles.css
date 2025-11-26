@@ -27,9 +27,11 @@ body .container {
 }
 
 body > header {
+    align-items: center;
     background: #fff;
     color: #000;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     position: fixed;
     top: 0;
@@ -56,14 +58,21 @@ h2 {
     text-transform: uppercase;
 }
 
-nav ul {
+nav {
+    display: flex;
     background: #333;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: flex-end;
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 720px;
 }
 
 nav li {
@@ -72,7 +81,7 @@ nav li {
 
 nav li > a, nav li > .dropdown-toggle {
     display: block;
-    padding: 18px 25px;
+    padding: 8px 24px;
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -90,9 +99,11 @@ nav .dropdown-toggle {
 }
 
 nav .dropdown-toggle::after {
-    content: ' ▼';
+    content: '▼';
     font-size: 9px;
+    padding-left: .5em;
     transition: transform 0.3s;
+    vertical-align: middle;
 }
 
 nav .dropdown.active .dropdown-toggle::after {
@@ -100,16 +111,18 @@ nav .dropdown.active .dropdown-toggle::after {
 }
 
 nav .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
     background: white;
-    min-width: max-content;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    min-width: max-content;
     opacity: 0;
-    visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 100%;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    visibility: hidden;
+    width: fit-content;
     z-index: 1000;
 }
 
@@ -129,7 +142,7 @@ nav .dropdown-menu li:last-child {
 }
 
 nav .dropdown-menu li a {
-    padding: 12px 20px;
+    padding: 8px 24px;
     color: #333;
     display: block;
     text-decoration: none;
@@ -153,7 +166,7 @@ section {
 #map,
 #services,
 #team {
-    scroll-margin-top: 149px;
+    scroll-margin-top: 129px;
 }
 
 #about {
@@ -198,7 +211,7 @@ section {
 }
 
 #services {
-    margin-top: 622px;
+    margin-top: 602px;
 }
 
 ul.border-left-red {
@@ -230,7 +243,7 @@ ul.border-left-red li {
     width: 100%;
     display: block;
     position: fixed;
-    top: 149px;
+    top: 129px;
     height: 473px;
     z-index: -1;
 }
