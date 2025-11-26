@@ -153,7 +153,7 @@ section {
 #map,
 #services,
 #team {
-    scroll-margin-top: 166px;
+    scroll-margin-top: 149px;
 }
 
 #about {
@@ -198,7 +198,7 @@ section {
 }
 
 #services {
-    margin-top: 639px;
+    margin-top: 622px;
 }
 
 ul.border-left-red {
@@ -230,7 +230,7 @@ ul.border-left-red li {
     width: 100%;
     display: block;
     position: fixed;
-    top: 166px;
+    top: 149px;
     height: 473px;
     z-index: -1;
 }
