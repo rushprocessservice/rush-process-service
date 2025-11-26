@@ -39,6 +39,7 @@ body > header {
 }
 
 footer {
+    background: #333;
     font-size: small;
     padding: 1em;
     text-align: center;
